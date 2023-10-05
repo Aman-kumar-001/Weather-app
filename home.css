@@ -39,7 +39,7 @@ html {
   min-height: 35rem;
 }
 
-.wave {
+.wave-one {
   opacity: 0.3;
   position: absolute;
   top: 120%;
@@ -55,13 +55,13 @@ html {
   z-index: 1;
 }
 
-.wave.-three {
+.wave-three {
   animation: drift 5000ms infinite linear;
   z-index: 2 !important;
   opacity: 0.2;
 }
 
-.wave.-two {
+.wave-two {
   animation: drift 7000ms infinite linear;
   opacity: 0.1;
   z-index: 3 !important;
@@ -123,13 +123,13 @@ html {
   text-transform: uppercase;
 }
 
-.temp {
+.temp{
   margin-top: 2.5rem;
   text-align: center;
   font-size: 3rem;
 }
 
-.tempmin_max {
+.tempmin-max {
   text-align: center;
   margin-top: 0.3rem;
   font-weight: 300;
@@ -137,7 +137,7 @@ html {
   color: #57606f;
 }
 
-#weathercon {
+.weathercon {
   height: 55%;
   display: flex;
   justify-content: center;
@@ -145,7 +145,7 @@ html {
   font-size: 3em;
 }
 
-#weathercon .fas {
+.weathercon .fas {
   font-size: 6rem;
   animation: fas-anime 3s linear infinite alternate;
 }
@@ -165,11 +165,11 @@ html {
     height: 80vh;
   }
 
-  .wave {
+  .wave-one {
     top: 85%;
   }
 
-  #weathercon {
+  .weathercon {
     font-size: 5em;
   }
 
@@ -182,7 +182,7 @@ html {
     height: 80vh;
   }
 
-  .wave {
+  .wave-one {
     top: 115%;
   }
 }
