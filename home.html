@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
-        <link rel="stylesheet" href="./home.css">
-    
-   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <link rel="stylesheet" href="./home.css">
+
+
 
     <title>Weather App</title>
 </head>
@@ -32,6 +32,66 @@
             <h3 class="tempmin-max"> Min 26.49 C | Max 26 .49 C</h3>
         </div>
     </div>
+
+    <script>
+        const curDate = document.getElementById("date");
+        let weathercon = document.getElementById("weathercon");
+
+        const tempstatus = "Clouds";
+
+        const getCurrentDay = () => {
+
+            var weekday = new Array(7);
+            weekday[0] = "Sunday";
+            weekday[1] = "Monday";
+            weekday[2] = "Tuesday";
+            weekday[3] = "Wednesday";
+            weekday[4] = "Thrusday";
+            weekday[5] = "Friday";
+            weekday[6] = "Saturday";
+            let currentTime = new Date;
+            let day = weekday[currentTime.getDay()];
+            return day;
+        };
+        // getCurrentDay();
+
+        const getCurrentTime = () => {
+            const months = ["Jan",
+                "Feb",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July",
+                "Aug",
+                "Sept",
+                "Oct",
+                "Nov",
+                "Dec"];
+
+            var now = new Date();
+            var month = months[now.getMonth() + 1];
+            var date = now.getDate();
+
+            let hours = now.getHours();
+            let mins = now.getMinutes();
+
+            let periods = "AM";
+
+            if (hours > 11) {
+                periods = "PM";
+                if (hours > 12)
+                    hours -= 12;
+            }
+            if (mins < 10) {
+                mins = "0" + mins;
+            }
+            
+           console.log(month ) ;
+           return `${month} ${date}  / ${hours}:${mins}${periods}`;
+        }
+        curDate.innerHTML= getCurrentTime() + " / " + getCurrentDay();
+    </script>
 </body>
 
 </html>
