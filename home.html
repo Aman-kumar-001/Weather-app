@@ -26,10 +26,10 @@
         </div>
 
         <div class="info">
-            <h2 class="location"><i class="fa-solid fa-street-view"></i>Pune,IN</h2>
+            <h2 class="location"><i class="fa-solid fa-street-view"></i>{%location%},{%country%}</h2>
             <p id="date">WED | OCT 23 | 10:49AM</p>
-            <h1 class="temp">26.49 C</h1>
-            <h3 class="tempmin-max"> Min 26.49 C | Max 26 .49 C</h3>
+            <h1 class="temp">{%tempval%}</h1>
+            <h3 class="tempmin-max"> Min {%tempmin%}*F | Max {%tempmax%}</h3>
         </div>
     </div>
 
@@ -58,7 +58,7 @@
         const getCurrentTime = () => {
             const months = ["Jan",
                 "Feb",
-                "March",
+                "Mar",
                 "April",
                 "May",
                 "June",
