@@ -24,11 +24,11 @@ const server = http.createServer((req, res) => {
     const realTimeData = arrdata.map((val) => replaceVal(homeFile , val))
     .join(" ");
     res.write(realTimeData);
-    console.log(realTimeData);
+    // console.log(realTimeData);
     })
     .on("end", (err) =>{
        if (err) return console.log("connection closed due to error",err);
-       console.log("end"); 
+    //    console.log("end"); 
        res.end();
     });
   }
