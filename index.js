@@ -14,13 +14,13 @@ const replaceVal = (tempVal, orgVal) => {
 }
 
 const server = http.createServer((req, res) => {
-  if ((req.url = "/")) {
+  if ((req.url = "/")) {  
     requests(
-      "https://api.openweathermap.org/data/2.5/weather?q=pune&appid=7486cf83fed0d02f8fd0e82fe0959d21"
+      "https://api.openweathermap.org/data/2.5/weather?q=delhi&appid=7486cf83fed0d02f8fd0e82fe0959d21"
     ).on("data", (chunk) => {
       const objdata = JSON.parse(chunk);
       const arrdata = [objdata];
-    //   console.log(arrdata[0].main.temp);
+      // console.log(arrdata[0].main.temp); 
     const realTimeData = arrdata.map((val) => replaceVal(homeFile , val))
     .join(" ");
     res.write(realTimeData);
@@ -28,7 +28,7 @@ const server = http.createServer((req, res) => {
     })
     .on("end", (err) =>{
        if (err) return console.log("connection closed due to error",err);
-    //    console.log("end"); 
+      //  console.log("end"); 
        res.end();
     });
   }
